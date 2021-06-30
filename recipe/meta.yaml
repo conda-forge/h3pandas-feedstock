@@ -20,8 +20,8 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - geopandas
-    - h3-py
+    - geopandas=0.9.*
+    - h3-py=3.7.*
     - numpy
     - pandas
     - python >=3.6
