@@ -1,5 +1,5 @@
 {% set name = "h3pandas" %}
-{% set version = "0.2.3" %}
+{% set version = "0.2.4" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/h3pandas-{{ version }}.tar.gz
-  sha256: 9d23bebf38fa4234df1056b66f2fdeeb50f07a735e2b330aa09c335167f567e4
+  sha256: 2c948afe63e92a9f5d49dfbb8a3a59d0cc390e078d6637d2674066ce8ce90a09
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
