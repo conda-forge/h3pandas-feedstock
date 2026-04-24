@@ -7,24 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/h3pandas-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/h3pandas-{{ version }}.tar.gz
   sha256: eda3430a88e81c03791c6f7e393d3a3af797b6f0b69d7d5496f35e35ab2557d0
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - geopandas
     - h3-py
     - numpy
     - pandas
-    - python >=3.8
+    - python >={{ python_min }}
     - shapely
     - typing-extensions
 
@@ -36,6 +36,7 @@ test:
     - pytest tests/
   requires:
     - pytest
+    - python {{ python_min }}
   source_files:
     - tests
 
